@@ -88,9 +88,10 @@ public class Main {
         boolean successfulLogin = false;
 
         while (!successfulLogin) {
+            System.out.println("Lütfen seçim yapınız..");
             System.out.println("1- Student Login\n2- Faculty Login\n3- Other Login\n4- Exit");
             int memberTypeChoice = s.nextInt();
-            s.nextLine(); // Boşluk karakterini yakalamak için
+            s.nextLine();
 
             if (memberTypeChoice == 4) {
                 new Exit().actions(database, null);
@@ -114,9 +115,9 @@ public class Main {
             }
 
             System.out.println("Enter phone number:");
-            String phoneNumber = s.next().trim();  // Trim any extra spaces
+            String phoneNumber = s.next().trim();
             System.out.println("Enter email:");
-            String email = s.next().trim();  // Trim any extra spaces
+            String email = s.next().trim();
 
             // Validate phone number and email
             int userId = database.login(phoneNumber, email);

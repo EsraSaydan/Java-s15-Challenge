@@ -22,8 +22,8 @@ public class Member extends User{
                 new DetermineFine(),
                 new ViewBarrowList(),
                 new ReturnBook(),
-                new ViewBooks(),  // Kitapları görüntüle
-                new ViewBooksByAuthor(),  // Yazarın kitaplarını görüntüle
+                new ViewBooks(),
+                new ViewBooksByAuthor(),
                 new ViewBooksType(),
                 new Exit(),
         };
@@ -33,9 +33,6 @@ public class Member extends User{
         return memberType;
     }
 
-    public void setMemberType(MemberType memberType) {
-        this.memberType = memberType;
-    }
 
     public String getAddress() {
         return address;
@@ -81,7 +78,7 @@ public class Member extends User{
         System.out.println("3-Kitabı İade Et");
         System.out.println("4-Kitapları Görüntüle");
         System.out.println("5-Yazarın Kitaplarını Görüntüle");
-        System.out.println("6-Kitap Türlerine Göre Kitapları Görüntüle");
+        System.out.println("6-Türlerine Göre Kitapları Görüntüle");
         System.out.println("7-Kitaba Yorum Yap ve Puan Ver!");
         System.out.println("8-Kitaplar Hakkında Yorum ve Puanları Gör!");
         System.out.println("9-ÇIKIŞ");

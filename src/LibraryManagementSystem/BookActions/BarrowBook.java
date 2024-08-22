@@ -6,7 +6,7 @@ import LibraryManagementSystem.Book.Book;
 import java.util.Scanner;
 
 public class BarrowBook implements BookActions {
-    private static final int BOOK_LIMIT = 5;  // Kitap limiti
+    private static final int BOOK_LIMIT = 5;
 
     @Override
     public void actions(Database database, User user) {
@@ -36,7 +36,7 @@ public class BarrowBook implements BookActions {
                 System.out.println("Kitap şu anda mevcut değil. Kitap " + borrower.getName() + " tarafından " + borrowedDate + " tarihinde ödünç alınmış.");
             }
         }
-        // Menüye geri dönme veya çıkış
+
         int choice;
         do {
             System.out.println("\n1- Başka bir kitap ödünç al");
@@ -63,6 +63,6 @@ public class BarrowBook implements BookActions {
                 default:
                     System.out.println("Geçersiz seçim. Tekrar deneyin.");
             }
-        } while (choice != 3);
+        } while (choice != 3); //kullanıcım 3 ü seçene kadar döngü devam eder
     }
 }

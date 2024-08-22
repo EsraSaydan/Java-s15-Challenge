@@ -27,7 +27,7 @@ public class AddCommentAndRating implements BookActions {
         do {
             System.out.println("1 ile 5 arasında bir puan girin:");
             ratingValue = scanner.nextInt();
-            scanner.nextLine(); // Boşluk karakterini yakalamak için
+            scanner.nextLine();
 
             if (ratingValue < 1 || ratingValue > 5) {
                 System.out.println("Geçersiz puan. Lütfen 1 ile 5 arasında bir puan girin:");

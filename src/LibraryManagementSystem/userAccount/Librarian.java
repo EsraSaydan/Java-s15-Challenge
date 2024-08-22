@@ -20,8 +20,7 @@ public class Librarian extends User {
         };
     }
 
-    public Librarian() {
-    }
+
 
     public Librarian(String email, String name, String phoneNumber, String password) {
         super(email, name, phoneNumber);
@@ -48,7 +47,7 @@ public class Librarian extends User {
             case 2 -> new DeleteBook();
             case 3 -> new ViewMember();
             case 4 -> new AddMember();
-            case 5 -> new UpdateBook();  // Kitapları güncelleme seçeneği eklendi
+            case 5 -> new UpdateBook();
             case 6 -> new Exit();
             default -> {
                 System.out.println("Error! Try again...");

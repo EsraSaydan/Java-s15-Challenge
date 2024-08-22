@@ -40,7 +40,7 @@ private Map<Long, List<Comment>> bookComments = new HashMap<>();
                 return entry.getKey(); // Kullanıcı ID'sini döndür
             }
         }
-        return -1; // Kullanıcı bulunamadıysa -1 döndür
+        return -1;
     }
 
     public User getUser(int id) {
@@ -57,7 +57,7 @@ private Map<Long, List<Comment>> bookComments = new HashMap<>();
                 }
             }
         }
-        return null; // Kütüphaneci bulunamadıysa null döndür
+        return null;
     }
 
 
@@ -103,15 +103,12 @@ private Map<Long, List<Comment>> bookComments = new HashMap<>();
                 return false;
             }
 
-            // Clear borrower information
             returnedBook.setStatus("Rafta");
             returnedBook.setBorrowerId(-1);
             borrowedDates.remove(returnedBook);
 
-            // Process refund
             processRefund(user, returnedBook);
 
-            // Print return confirmation
             System.out.println(returnedBook.getName() + " başarıyla iade edildi.");
             return true;
         } else {
@@ -127,7 +124,7 @@ private Map<Long, List<Comment>> bookComments = new HashMap<>();
 
 
     public void generateInvoice(User user, Book book) {
-        // Fatura kesme işlemi burada yapılır
+        // Fatura kesme işlemi
         double price = book.getPrice();
         System.out.println("Kullanıcı " + user.getName() + " için " + book.getName() + " kitabı için " + price + " TL fatura kesildi.");
     }
@@ -150,16 +147,12 @@ private Map<Long, List<Comment>> bookComments = new HashMap<>();
             generateInvoice(user, barrowedBook);  // Fatura kesiliyor
         } else if (barrowedBook != null && barrowedBook.getStatus().equalsIgnoreCase("Alındı")) {
             User borrower = borrowedBooks.get(barrowedBook);
-            String borrowedDate = getBorrowedDate(barrowedBook);  // Ödünç alınma tarihini alıyoruz
+            String borrowedDate = getBorrowedDate(barrowedBook);  // Ödünç alınma tarihini al
             System.out.println("Kitap şu anda mevcut değil. " + borrower.getName() + " isimli üyemizden " + borrowedDate + " tarihinde ödünç alındı.");
         } else {
             System.out.println("Girilen id'de kitap bulunamadı...");
         }
     }
-
-
-
-
 
 
     public String getBarrowDate(Book book) {

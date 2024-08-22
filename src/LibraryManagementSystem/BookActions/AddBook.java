@@ -32,7 +32,7 @@ public class AddBook implements BookActions {
 
         System.out.println("Yeni kitabın fiyatını girin: ");
         Double price = scanner.nextDouble();
-        scanner.nextLine(); // Boşluk karakterini yakalamak için
+        scanner.nextLine();
 
         System.out.println("Yeni kitabın türünü seçin (1-Study, 2-Magazine, 3-Journal): ");
         int bookTypeChoice = scanner.nextInt();
